@@ -1,8 +1,5 @@
 export LC_ALL=en_US.UTF-8
 
-#alias 'vim'=/usr/local/Cellar/vim/8.1.0650/bin/vim
-#export PYTHONPATH=$PYTHONPATH:/Library/Frameworks/Python.framework/Versions/3.8/bin/python3
-
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
@@ -19,6 +16,8 @@ alias jn="jupyter notebook --no-browser"
 alias jnb="jupyter notebook"
 jnp(){ jupyter notebook --no-browser --port=$1; }
 opentunnel(){ ssh -N -L localhost:$1:localhost:$2 nirwan@$3.uni-frankfurt.de; }
+
+#vim bindings for jupyter notebooks
 jn_vim(){
     if [ $1 = "on" ]; then
         jupyter nbextension enable vim_binding/vim_binding
@@ -50,5 +49,3 @@ function marks {
 alias vimsess="vim -S .session.vim"
 
 run_timer(){ while true; do echo -ne "`date`\r"; sleep 1; done }
-export PATH=~/.npm-global/bin:$PATH
-export PATH=/Library/Frameworks/Python.framework/Versions/3.8/bin:$PATH
