@@ -47,8 +47,8 @@ function marks {
 ##########################################################################
 
 
-alias vims="vim -S .session.vim"
+alias vimsess="vim -S .session.vim"
 
 run_timer(){ while true; do echo -ne "`date`\r"; sleep 1; done }
-#export PATH=~/.npm-global/bin:$PATH
-#export PATH=/Library/Frameworks/Python.framework/Versions/3.8/bin:$PATH
+export PATH=~/.npm-global/bin:$PATH
+export PATH=/Library/Frameworks/Python.framework/Versions/3.8/bin:$PATH
