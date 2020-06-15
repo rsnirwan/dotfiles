@@ -1,13 +1,16 @@
 set encoding=utf-8
 
+syntax on
+
 "autocmd BufWritePost *.py call Flake8()   " run Flake8 on every :w in *.py
 "
 "let g:jedi#force_py_version = 3  
 "let jedi#force_py_version=3.8
+let g:vimtex_view_method = 'skim'
 
-syntax on
 
 let mapleader=","
+let maplocalleader=","
 
 "Black python formatter
 nnoremap <leader>B :Black<CR>
@@ -23,6 +26,7 @@ nnoremap <leader>B :Black<CR>
 
 set number relativenumber          " show line number
 set showmatch       " hightlight matching braces
+nnoremap <leader>h :nohls<CR>
 
 
 " tabs and spaces
@@ -37,7 +41,9 @@ set splitright      " new split panel to right
 set backspace=2     " Backspace deletes like most programs in insert mode
 
 " test
-inoremap <leader>c huuhworks! 
+"inoremap <leader>c huuhworks! 
+" use abbreviation instead
+iab hw hello world!
 
 " noremap Q !!sh<CR>        "run line as shell command. output pasted below
 " noremap Q !!$SHELL<CR>    "run line as shell command. output pasted below
@@ -94,6 +100,15 @@ tnoremap <ESC> <C-\><C-n>
 
 nnoremap <leader>vr :e $MYVIMRC<cr>
 nnoremap <leader>br :e ~/.bash_profile<cr>
+nnoremap <leader>ut :tabedit<cr>:e<space>~/Dev/usefullthings/<cr>
 
+
+""""""folds for python
+" fold docstring - curser must be in the docstring
+nnoremap <leader>zd ?"""<CR>V/"""<CR>zf:nohls<CR>
+
+""""vimlatex
+" remove warnings buffer
+nnoremap <leader>lr <c-w>j:q<CR><c-w>l
 
 filetype plugin indent on
