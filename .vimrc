@@ -2,6 +2,10 @@ set encoding=utf-8
 
 syntax on
 
+set autoread
+set updatetime=1000
+au CursorHold,CursorHoldI * checktime
+
 "autocmd BufWritePost *.py call Flake8()   " run Flake8 on every :w in *.py
 "
 "let g:jedi#force_py_version = 3  
@@ -27,6 +31,8 @@ nnoremap <leader>B :Black<CR>
 set number relativenumber          " show line number
 set showmatch       " hightlight matching braces
 nnoremap <leader>h :nohls<CR>
+"show trailing spaces
+nnoremap <leader>t<space> /\s\+$<CR>
 
 
 " tabs and spaces

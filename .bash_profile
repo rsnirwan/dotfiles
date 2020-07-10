@@ -49,7 +49,7 @@ function marks {
 ##########################################################################
 
 
-alias vimsess="vim -S .session.vim"
+alias vims="vim -S .session.vim"
 
 run_timer(){ while true; do echo -ne "`date`\r"; sleep 1; done }
 #export PATH=~/.npm-global/bin:$PATH
