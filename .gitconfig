@@ -1,0 +1,5 @@
+[alias]
+    logn = log --oneline -n 10
+    logg = log --graph --decorate --oneline --abbrev-commit --all
+    loggn = log --graph --decorate --oneline --abbrev-commit --all -n 10
+    co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
