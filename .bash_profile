@@ -1,5 +1,10 @@
 export LC_ALL=en_US.UTF-8
 
+export PYTHONPATH=$PYTHONPATH:~/Dev/python
+
+#export PYTHONPATH=$PYTHONPATH:/Library/Frameworks/Python.framework/Versions/3.8/bin/python3
+#PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
+
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
@@ -16,8 +21,6 @@ alias jn="jupyter notebook --no-browser"
 alias jnb="jupyter notebook"
 jnp(){ jupyter notebook --no-browser --port=$1; }
 opentunnel(){ ssh -N -L localhost:$1:localhost:$2 nirwan@$3.uni-frankfurt.de; }
-
-#vim bindings for jupyter notebooks
 jn_vim(){
     if [ $1 = "on" ]; then
         jupyter nbextension enable vim_binding/vim_binding
@@ -46,6 +49,21 @@ function marks {
 ##########################################################################
 
 
-alias vimsess="vim -S .session.vim"
+alias vims="vim -S .session.vim"
 
 run_timer(){ while true; do echo -ne "`date`\r"; sleep 1; done }
+#export PATH=~/.npm-global/bin:$PATH
+#export PATH=/Library/Frameworks/Python.framework/Versions/3.8/bin:$PATH
+
+#git
+source ~/.git-completion.bash
+source ~/.git-prompt.sh
+#PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUPSTREAM="auto"
+green="\[\033[0;32m\]"
+blue="\[\033[0;34m\]"
+purple="\[\033[0;35m\]"
+reset="\[\033[0m\]"
+export PS1="$purple\u$green\$(__git_ps1)$blue \W $ $reset"
+
