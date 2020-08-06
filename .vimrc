@@ -20,6 +20,11 @@ nnoremap <leader>B :Black<CR>
 "au InsertLeave * let &updatetime=updaterestore
 
 
+nnoremap <Up> :resize +2<CR> 
+nnoremap <Down> :resize -2<CR>
+nnoremap <Left> :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
+
 
 set number relativenumber          " show line number
 set showmatch       " hightlight matching braces
@@ -30,7 +35,11 @@ set tabstop=4       " redefine tab as 4 spaces
 set shiftwidth=4    " how many cols text is intented with reindent
 set expandtab       " tab will produce appropriate number of spaces
 set shiftround      " tab goes to multiple of shiftwidth
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40
 
+set mouse=a
+set background=dark
 
 set splitbelow      " new split panel to bottom
 set splitright      " new split panel to right
