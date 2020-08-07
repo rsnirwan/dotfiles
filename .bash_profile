@@ -66,4 +66,4 @@ blue="\[\033[0;34m\]"
 purple="\[\033[0;35m\]"
 reset="\[\033[0m\]"
 export PS1="$purple\u$green\$(__git_ps1)$blue \W $ $reset"
-
+#export PS1="$purple\u@\h:$green\$(__git_ps1)$blue \W $ $reset"
