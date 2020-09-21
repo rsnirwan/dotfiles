@@ -75,6 +75,8 @@ nnoremap <leader>t :NERDTree<CR>
 
 " convenience mappings
 nnoremap ' `
+nnoremap <leader>y viw"+y
+
 
 " fill register automatically
 autocmd FileType python let @r='python3 %'    " run python as default in register r
