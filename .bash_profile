@@ -12,6 +12,9 @@ fi
 
 alias p3="python3"
 alias ip3="ipython3"
+alias p36="~/.runtimes/Python36/bin/python3"
+alias p37="~/.runtimes/Python37/bin/python3"
+alias p38="~/.runtimes/Python38/bin/python3"
 
 alias ll="ls -l"
 alias la="ls -A"
@@ -20,7 +23,6 @@ alias l="ls -CF"
 alias jn="jupyter notebook --no-browser"
 alias jnb="jupyter notebook"
 jnp(){ jupyter notebook --no-browser --port=$1; }
-opentunnel(){ ssh -N -L localhost:$1:localhost:$2 nirwan@$3.uni-frankfurt.de; }
 jn_vim(){
     if [ $1 = "on" ]; then
         jupyter nbextension enable vim_binding/vim_binding
