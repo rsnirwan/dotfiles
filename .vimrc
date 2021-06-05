@@ -8,7 +8,7 @@ au CursorHold,CursorHoldI * checktime
 
 "autocmd BufWritePost *.py call Flake8()   " run Flake8 on every :w in *.py
 "
-"let g:jedi#force_py_version = 3  
+"let g:jedi#force_py_version = 3
 "let jedi#force_py_version=3.8
 let g:vimtex_view_method = 'skim'
 
@@ -27,7 +27,7 @@ nnoremap <leader>B :Black<CR>
 "au InsertLeave * let &updatetime=updaterestore
 
 
-nnoremap <Up> :resize +2<CR> 
+nnoremap <Up> :resize +2<CR>
 nnoremap <Down> :resize -2<CR>
 nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
@@ -38,6 +38,8 @@ set showmatch       " hightlight matching braces
 nnoremap <leader>h :nohls<CR>
 "show trailing spaces
 nnoremap <leader>t<space> /\s\+$<CR>
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
 
 
 " tabs and spaces
@@ -76,6 +78,8 @@ nnoremap <leader>t :NERDTree<CR>
 " convenience mappings
 nnoremap ' `
 nnoremap <leader>y viw"+y
+nnoremap <tab> gt
+nnoremap <S-tab> gT
 
 
 " fill register automatically
