@@ -1,0 +1,28 @@
+{
+    "editor.renderWhitespace": "trailing",
+    "editor.lineNumbers": "relative",
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "python.languageServer": "Pylance",
+    "python.pythonPath": "path_to_env/bin/python",
+    //"python.envFile": "${workspaceFolder}/.vscode/env",
+    "vim.vimrc.enable": true,
+    "vim.leader": ",",
+    "vim.normalModeKeyBindings":[
+        {
+            "before": ["<leader>", "t"],
+            "commands": ["workbench.action.toggleSidebarVisibility"]
+        },
+        {
+            "before": ["<S-K>"],
+            "commands": ["editor.action.showHover"]
+        }
+    ],
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "jupyter.askForKernelRestart": false
+}
