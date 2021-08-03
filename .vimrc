@@ -6,18 +6,25 @@ set autoread
 set updatetime=1000
 au CursorHold,CursorHoldI * checktime
 
-"autocmd BufWritePost *.py call Flake8()   " run Flake8 on every :w in *.py
-"
-"let g:jedi#force_py_version = 3
-"let jedi#force_py_version=3.8
-let g:vimtex_view_method = 'skim'
-
+set path+=.,** "for go file
+set exrc "read .vimrc in projects root
+set secure
 
 let mapleader=","
 let maplocalleader=","
 
+"autocmd BufWritePost *.py call Flake8()   " run Flake8 on every :w in *.py
+"
+"let g:jedi#force_py_version = 3
+let jedi#force_py_version=3.8
+"let g:jedi#environment_path = "" "path virtualenv
+
 "Black python formatter
 nnoremap <leader>B :Black<CR>
+autocmd BufWritePost *.py silent! execute ':Black'
+
+"let g:vimtex_view_method = 'skim'
+
 
 " automatically leave insert mode after 'updatetime' milliseconds of inaction
 "au CursorHoldI * stopinsert
@@ -78,6 +85,7 @@ nnoremap <leader>t :NERDTree<CR>
 " convenience mappings
 nnoremap ' `
 nnoremap <leader>y viw"+y
+nnoremap <leader>Y 0v$h"+y
 nnoremap <tab> gt
 nnoremap <S-tab> gT
 
