@@ -57,7 +57,7 @@ set shiftround      " tab goes to multiple of shiftwidth
 set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey40
 
-set mouse=a
+set mouse=r
 set background=dark
 
 set splitbelow      " new split panel to bottom
