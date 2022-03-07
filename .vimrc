@@ -16,12 +16,12 @@ let maplocalleader=","
 "autocmd BufWritePost *.py call Flake8()   " run Flake8 on every :w in *.py
 "
 "let g:jedi#force_py_version = 3
-let jedi#force_py_version=3.8
+"let jedi#force_py_version=3.8
 "let g:jedi#environment_path = "" "path virtualenv
 
 "Black python formatter
-nnoremap <leader>B :Black<CR>
-autocmd BufWritePost *.py silent! execute ':Black'
+"nnoremap <leader>B :Black<CR>
+"autocmd BufWritePost *.py silent! execute ':Black'
 
 "let g:vimtex_view_method = 'skim'
 
