@@ -1,7 +1,7 @@
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
 [core]
-	editor = vim
+    editor = vim
     pager = cat
 [alias]
     logn = log --oneline -n 10
@@ -9,3 +9,5 @@
     loggn = log --graph --decorate --oneline --abbrev-commit --all -n 10
     co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
     dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)"%an" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+    ll = log --graph -n 20 --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+    head = !sh -c 'git branch --sort=-committerdate | head -n 15'
