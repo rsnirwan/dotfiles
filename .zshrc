@@ -1,8 +1,10 @@
+# ZSH_THEME="daveverwer"
+
 alias p3="python3"
-alias ip3="ipython3"
-alias p36="~/.runtimes/Python36/bin/python3"
-alias p37="~/.runtimes/Python37/bin/python3"
-alias p38="~/.runtimes/Python38/bin/python3"
+alias ip3="python3 -m IPython"
+alias p39="$HOME/.pyenv/versions/3.9.7/bin/python3"
+alias p38="$HOME/.pyenv/versions/3.8.13/bin/python3"
+alias pip38="$HOME/.pyenv/versions/3.8.13/bin/pip3"
 
 
 alias ll="ls -l"
@@ -18,6 +20,10 @@ jn_vim(){
     elif [ $1 = "off" ]; then
         jupyter nbextension disable vim_binding/vim_binding
     fi
+}
+function nbtopdf {  # download notebook from remote and convert to pdf
+    scp remote:"/path/to/notebook/folder/$1" .
+    jupyter nbconvert --no-input --to pdf --no-prompt $1
 }
 
 ########### set marks to quickly navigate your filesystem #################
@@ -48,3 +54,19 @@ function dr {
         export DR=$1
     fi
 }
+
+# s3 bucket size
+function s3size {
+    aws s3api list-objects --profile $1 --bucket $2 --output json --query "[sum(Contents[].Size), length(Contents[])]" | awk  'NR!=2 {print $0;next}  NR==2 {print $0/1024/1024/1024" GB"}'
+}
+
+
+# PROMPT
+export PROMPT="CD2 $PROMPT"
+
+#PYENV
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+countpy() { find $1 -name "*.py" | xargs wc -l ; }
+bindkey -v
