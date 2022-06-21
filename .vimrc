@@ -92,7 +92,8 @@ nnoremap <S-tab> gT
 
 " fill register automatically
 autocmd FileType python let @r='python3 %'    " run python as default in register r
-autocmd FileType text let @r='it works!'        " test
+autocmd FileType cpp let @r='g++ % -o mmmain -O0 -Wall -std=c++17; ./mmmain; rm mmmain'    " run c++ main.cpp
+autocmd FileType text let @r='...'        " test
 autocmd FileType tex let @p='ggf.v$"ry'         " yank first line into register r
 
 " highligt column 80
