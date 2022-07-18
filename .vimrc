@@ -10,6 +10,8 @@ set path+=.,** "for go file
 set exrc "read .vimrc in projects root
 set secure
 
+set wrap linebreak nolist
+
 let mapleader=","
 let maplocalleader=","
 
