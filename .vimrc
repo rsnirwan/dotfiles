@@ -59,26 +59,16 @@ set shiftround      " tab goes to multiple of shiftwidth
 set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey40
 
-set mouse=r
+set mouse=a  " r
 set background=dark
 
 set splitbelow      " new split panel to bottom
 set splitright      " new split panel to right
 set backspace=2     " Backspace deletes like most programs in insert mode
 
-" test
-"inoremap <leader>c huuhworks! 
-" use abbreviation instead
+" test abbreviation
 iab hw hello world!
 
-" noremap Q !!sh<CR>        "run line as shell command. output pasted below
-" noremap Q !!$SHELL<CR>    "run line as shell command. output pasted below
-"run line as shell command
-nnoremap Q :.w !$SHELL<CR>
-" nnoremap <leader>r :.w !$SHELL<CR> "WHY IS THIS NOT WORKING????
-
-"excecute register r in shell
-nnoremap <leader>q :!<C-R>r<CR>
 
 "open NERDTree
 nnoremap <leader>t :NERDTree<CR>
@@ -92,10 +82,21 @@ nnoremap <tab> gt
 nnoremap <S-tab> gT
 
 
-" fill register automatically
+
+" noremap Q !!sh<CR>        "run line as shell command. output pasted below
+" noremap Q !!$SHELL<CR>    "run line as shell command. output pasted below
+"run line as shell command
+nnoremap Q :.w !$SHELL<CR>
+" nnoremap <leader>r :.w !$SHELL<CR> "WHY IS THIS NOT WORKING????
+
+
+"excecute register r in shell " register r is filled based on FileType
+nnoremap <leader>q :!<C-R>r<CR>
+
+" fill register r automatically " prepare for execution using <leader>q
 autocmd FileType python let @r='python3 %'    " run python as default in register r
-autocmd FileType cpp let @r='g++ % -o mmmain -O0 -Wall -std=c++17; ./mmmain; rm mmmain'    " run c++ main.cpp
-autocmd FileType text let @r='...'        " test
+autocmd FileType cpp let @r='g++ % -o mmmain -O0 -Wall -Wextra -std=c++17; ./mmmain; rm mmmain'    " run c++
+autocmd FileType text let @r='test text yanked'        " test
 autocmd FileType tex let @p='ggf.v$"ry'         " yank first line into register r
 
 " highligt column 80
