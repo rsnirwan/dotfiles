@@ -94,8 +94,10 @@ nnoremap Q :.w !$SHELL<CR>
 nnoremap <leader>q :!<C-R>r<CR>
 
 " fill register r automatically " prepare for execution using <leader>q
-autocmd FileType python let @r='python3 %'    " run python as default in register r
-autocmd FileType cpp let @r='g++ % -o mmmain -O0 -Wall -Wextra -std=c++17; ./mmmain; rm mmmain'    " run c++
+autocmd FileType python let @r='python3 %'    " run python as default in register r
+autocmd FileType cpp let @r='g++ % -o mmmain -O0 -Wall -Wextra -std=c++17; ./mmmain; rm mmmain'    " run c++
+autocmd FileType tcl let @r='tclsh %'
+autocmd FileType cuda let @r='nvcc % -o mmmain -std=c++11; ./mmmain; rm mmmain'
 autocmd FileType text let @r='test text yanked'        " test
 autocmd FileType tex let @p='ggf.v$"ry'         " yank first line into register r
 
