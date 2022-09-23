@@ -1,0 +1,6 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "vim.vimrc.enable": true,
+    "keyboard.dispatch": "keyCode",
+    "editor.lineNumbers": "relative"
+}
