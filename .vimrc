@@ -76,12 +76,16 @@ nnoremap <leader>t :NERDTree<CR>
 
 " convenience mappings
 nnoremap ' `
-nnoremap <leader>y viw"+y
+nnoremap <leader>yy viw"+y
 nnoremap <leader>Y 0v$h"+y
 nnoremap <tab> gt
 nnoremap <S-tab> gT
 nnoremap <leader>mr :set mouse=r<CR>
 nnoremap <leader>ma :set mouse=a<CR>
+nnoremap <leader>ya viw"ay
+nnoremap <leader>yb viw"by
+nnoremap <leader>pa viw"ap
+nnoremap <leader>pb viw"bp
 
 
 
