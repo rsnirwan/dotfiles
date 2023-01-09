@@ -106,7 +106,7 @@ autocmd FileType cpp let @r='g++ % -o mmmain -O0 -Wall -Wextra -std=c++17; ./mmm
 autocmd FileType tcl let @r='tclsh %'
 autocmd FileType cuda let @r='nvcc % -o mmmain -std=c++11; ./mmmain; rm mmmain'
 autocmd FileType text let @r='test text yanked'        " test
-autocmd FileType tex let @p='ggf.v$"ry'         " yank first line into register r
+autocmd FileType tex let @r='pdflatex %; bibtex %:r.aux; pdflatex %; pdflatex %;'
 
 " highligt column 80
 set colorcolumn=80
