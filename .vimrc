@@ -82,6 +82,8 @@ nnoremap <tab> gt
 nnoremap <S-tab> gT
 nnoremap <leader>mr :set mouse=r<CR>
 nnoremap <leader>ma :set mouse=a<CR>
+nnoremap <leader>nn :set rnu!<CR>
+nnoremap <leader>nr :set rnu<CR>
 nnoremap <leader>ya viw"ay
 nnoremap <leader>yb viw"by
 nnoremap <leader>pa viw"ap
