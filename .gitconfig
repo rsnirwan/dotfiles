@@ -4,10 +4,11 @@
     editor = vim
     pager = cat
 [alias]
-    logn = log --oneline -n 10
+    logn = log --oneline -n 20
     logg = log --graph --decorate --oneline --abbrev-commit --all
-    loggn = log --graph --decorate --oneline --abbrev-commit --all -n 10
+    loggn = log --graph --decorate --oneline --abbrev-commit --all -n 20
     co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
     dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)"%an" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
     ll = log --graph -n 20 --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
     head = !sh -c 'git branch --sort=-committerdate | head -n 15'
+    bls = for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' --sort=-committerdate --count=20
