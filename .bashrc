@@ -1,7 +1,11 @@
 #OSH_THEME="pure"
+setxkbmap -option caps:escape
 
 set -o vi
 
+function branchesls {
+    git for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' --sort=-committerdate | grep "$1"
+}
 function mybranchesls {
-    git for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' --sort=-committerdate | grep "$(git config user.name)"
+    branchesls "$(git config user.name)"
 }
