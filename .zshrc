@@ -60,6 +60,9 @@ function s3size {
     aws s3api list-objects --profile $1 --bucket $2 --output json --query "[sum(Contents[].Size), length(Contents[])]" | awk  'NR!=2 {print $0;next}  NR==2 {print $0/1024/1024/1024" GB"}'
 }
 
+function hgrep {
+    history | grep "$1"
+}
 
 # PROMPT
 export PROMPT="CD2 $PROMPT"
