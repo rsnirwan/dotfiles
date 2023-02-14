@@ -88,6 +88,7 @@ nnoremap <leader>ya viw"ay
 nnoremap <leader>yb viw"by
 nnoremap <leader>pa viw"ap
 nnoremap <leader>pb viw"bp
+nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 
 
 
