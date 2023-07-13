@@ -68,6 +68,8 @@ set backspace=2     " Backspace deletes like most programs in insert mode
 
 " test abbreviation
 iab hw hello world!
+iab 2lines this is first line
+            \<CR>this is second line
 
 
 "open NERDTree
